@@ -1,7 +1,7 @@
 Puppet::Type.type(:gitclone).provide(:gitclone_linux) do
 
   def check_created_file(file)
-    if File.exists?(file+'/.git')
+    if File.exist?(file+'/.git')
       self.debug("Found #{file}")
       return true
     else

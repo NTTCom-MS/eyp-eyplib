@@ -1,4 +1,4 @@
-if File.exists?('/opt/eypconf/id') then
+if File.exist?('/opt/eypconf/id') then
   Dir.entries("/opt/eypconf/id").select {|f| !File.directory? f}.each do |i|
 
     genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /opt/eypconf/id/#{i}'").to_s

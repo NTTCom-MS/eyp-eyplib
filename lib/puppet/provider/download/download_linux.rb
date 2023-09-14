@@ -1,7 +1,7 @@
 Puppet::Type.type(:download).provide(:download_linux) do
 
   def check_created_file(file)
-    if File.exists?(file)
+    if File.exist?(file)
       if File.zero?(file)
         self.debug("Found #{file} but empty")
         return false
